@@ -26,10 +26,6 @@ include_directories(${agent_include_dir})
 
 find_library(agent_library NAMES nodewatcher-agent-common)
 
-set(SOURCES
-  main.c
-)
-
 add_library(koruza_module MODULE main.c)
 target_link_libraries(koruza_module ${agent_library})
 set_target_properties(koruza_module PROPERTIES OUTPUT_NAME koruza PREFIX "")
